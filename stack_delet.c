@@ -41,25 +41,59 @@ int firstin(int val){
 }
 int firstout(){
        
-        if(top>n-1){
+        if(top<0){
             printf("stack is over\n");
      }
      else{
-        int val;
-        for(int i=0;i<=top;i++){
+        
+        for(int i=top;i>=0;i++){
+        a[i]=a[i+1];        
         }
         top--;
+         
        }
 }
 int main(){
-    insertEnd(10);
-    insertEnd(20);
-    insertEnd(30);
-   insertEnd(40);
-   // insertEnd(50);
-    //insertEnd(60);
-   firstin(50);
-    firstout();
-    //firstout();
-    display();
+    int ch;
+    printf("1.Display\n");
+    printf("2.Insert Array End\n");
+    printf("3.Delet array End\n");
+    printf("4.First Insert\n");
+    printf("5.first Delet\n");
+    printf("6.Thank you");
+do{
+    printf("Enter your choice::");
+    scanf("%d",&ch);
+    int val;
+    switch(ch){
+        case 1:
+            display();
+            break;
+        case 2: 
+            printf("Enter your last array:");
+            scanf("%d",&val);
+            insertEnd(val);
+            break;
+        case 3:
+            delet();
+            break;
+        case 4:
+            printf("Enter your first array:");
+            scanf("%d",&val);
+            firstin(val);
+            break;
+        case 5:
+            firstout();
+            break;
+        case 0:
+            printf("your choice is wrong");
+            break;
+        default:
+            printf("wrong.....");
+            break;
+    }
+}
+while(ch!=0);
+return 0;
+
 }
