@@ -46,7 +46,7 @@ int firstout(){
      }
      else{
         
-        for(int i=top;i>=0;i++){
+        for(int i=0;i>=top;i++){
         a[i]=a[i+1];        
         }
         top--;
